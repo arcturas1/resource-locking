@@ -30,8 +30,8 @@ public class FourBitTwoTest {
     Device d = FourBitTwoTest.buildDevice(init, 2);
     assertTrue(FourBitTwoDisclosureDeviceUnlocker.unlock(d));
     String trace = FourBitTwoDisclosureDeviceUnlocker.showTrace();
-    assertThat(trace, containsString("SUCCESS"));
-    System.out.println("TRACE:\n" + trace);
+    assertThat(trace, containsString("true"));
+   // System.out.println("TRACE:\n" + trace);
   }
 
   @Test public void testItUnlocksTheDeviceWithAllFalse() {
@@ -39,15 +39,15 @@ public class FourBitTwoTest {
     Device d = FourBitTwoTest.buildDevice(init, 2);
     assertTrue(FourBitTwoDisclosureDeviceUnlocker.unlock(d));
     String trace = FourBitTwoDisclosureDeviceUnlocker.showTrace();
-    assertThat(trace, containsString("SUCCESS"));
-    System.out.println("TRACE:\n" + trace);
+    assertThat(trace, containsString("true"));
+    //System.out.println("TRACE:\n" + trace);
   }
 
   @Test public void testItUnlocksTheDeviceWhenSetRandomBits() {
     Device d = FourBitTwoTest.buildDevice();
     assertTrue(FourBitTwoDisclosureDeviceUnlocker.unlock(d));
     String trace = FourBitTwoDisclosureDeviceUnlocker.showTrace();
-    assertThat(trace, containsString("SUCCESS"));
+    assertThat(trace, containsString("true"));
     System.out.println("TRACE:\n" + trace);
   }
 
@@ -55,8 +55,8 @@ public class FourBitTwoTest {
     UnfairTestDevice d = new UnfairTestDevice();
     assertFalse(FourBitTwoDisclosureDeviceUnlocker.unlock(d));
     String trace = FourBitTwoDisclosureDeviceUnlocker.showTrace();
-    assertThat(trace, containsString("FAILED"));
-    System.out.println("TRACE:\n" + trace);
+    assertThat(trace, containsString("false"));
+    //System.out.println("TRACE:\n" + trace);
   }
 
   @Test public void testItFailsWithFiveTwo(){
@@ -64,8 +64,8 @@ public class FourBitTwoTest {
     Device d = FourBitTwoTest.buildDevice(init, 2);
     assertFalse(FourBitTwoDisclosureDeviceUnlocker.unlock(d));
     String trace = FourBitTwoDisclosureDeviceUnlocker.showTrace();
-    assertThat(trace, containsString("FAILED"));
-    System.out.println("TRACE:\n" + trace);
+    assertThat(trace, containsString("false"));
+   // System.out.println("TRACE:\n" + trace);
   }
 
 
